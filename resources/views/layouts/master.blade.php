@@ -40,8 +40,8 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-          <li class="{{'#' == request()->path() ? 'active' : ''}}">
-            <a href="#">
+          <li class="{{'admin' == request()->path() ? 'active' : ''}}">
+            <a href="/admin">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>

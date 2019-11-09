@@ -155,3 +155,9 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
 	text-align:center;
 }
+
+@media(max-width:769px){
+	.login-html {
+		padding: 90px 20px 50px 20px;
+	}
+}
