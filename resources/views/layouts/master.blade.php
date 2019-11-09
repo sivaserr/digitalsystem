@@ -19,7 +19,11 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
-
+<style>
+  .sidebar[data-color="orange"]:after, .off-canvas-sidebar[data-color="orange"]:after {
+    background: #285381;
+}
+</style>
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="orange">
@@ -40,6 +44,12 @@
             <a href="#">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="{{'#' == request()->path() ? 'active' : ''}}">
+            <a href="#">
+              <i class="now-ui-icons design_bullet-list-67"></i>
+              <p>Produtcs</p>
             </a>
           </li>
           <li class="{{'customer' == request()->path() ? 'active' : ''}}">
@@ -66,24 +76,14 @@
               <p>Report</p>
             </a>
           </li>
-          <li class="{{'#' == request()->path() ? 'active' : ''}}">
-            <a href="#">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li class="{{'#' == request()->path() ? 'active' : ''}}">
-            <a href="#">
-              <i class="now-ui-icons text_caps-small"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="active-pro">
+
+
+          {{-- <li class="active-pro">
             <a href="./upgrade.html">
               <i class="now-ui-icons arrows-1_cloud-download-93"></i>
               <p>Upgrade to PRO</p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>
@@ -108,7 +108,7 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
+            {{-- <form>
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <div class="input-group-append">
@@ -117,16 +117,16 @@
                   </div>
                 </div>
               </div>
-            </form>
+            </form> --}}
             <ul class="navbar-nav">
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons media-2_sound-wave"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Stats</span>
                   </p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item dropdown">
                   <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                       {{ Auth::user()->name }} 
@@ -182,7 +182,7 @@
       </div>
       <footer class="footer">
         <div class="container-fluid">
-          <nav>
+          {{-- <nav>
             <ul>
               <li>
                 <a href="https://www.creative-tim.com">
@@ -200,14 +200,13 @@
                 </a>
               </li>
             </ul>
-          </nav>
+          </nav> --}}
           <div class="copyright" id="copyright">
             &copy;
             <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
             </script>, Designed by
-            <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            <a href="http://ivisual.in/" target="_blank">I visual</a>
           </div>
         </div>
       </footer>

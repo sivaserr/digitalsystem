@@ -22,9 +22,19 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        // $customer = new Customer();
+
+        // $customer->name = $request->input('name');
+        // $customer->address = $request->input('address');
+        // $customer->city = $request->input('city');
+        // $customer->email = $request->input('email');
+        // $customer->phone = $request->input('phone');
+
+        // $customer->save();
+
+        // return response()->json($customer);
     }
 
     /**
@@ -46,6 +56,7 @@ class CustomerController extends Controller
         $customer->save();
 
         return redirect('customer')->with('customer',$customer);
+
     }
 
     /**
@@ -109,5 +120,57 @@ class CustomerController extends Controller
         $customers->delete();
 
         return redirect('/customer')->with('customers' ,$customers);
+    }
+
+
+    public function jsondata()
+    {
+      $customerdata = Customer::all();
+
+      return response()->json($customerdata);
+    }
+
+    public function jsondatawidthid($id)
+    {
+        $customerdata = Customer::Find($id);
+        
+        return response()->json($customerdata);
+
+    }
+    public function jsoncreate(Request $request)
+    {
+        $customer = new Customer();
+
+        $customer->name = $request->input('name');
+        $customer->address = $request->input('address');
+        $customer->city = $request->input('city');
+        $customer->email = $request->input('email');
+        $customer->phone = $request->input('phone');
+
+        $customer->save();
+
+        return response()->json($customer);
+    }
+    public function jsonupdate(Request $request, $id)
+    {
+        $customerss = Customer::find($id);
+
+        $customerss->name = $request->input('name');
+        $customerss->address = $request->input('address');
+        $customerss->city = $request->input('city');
+        $customerss->email = $request->input('email');
+        $customerss->phone = $request->input('phone');
+
+        $customerss->save();
+
+        return response()->json($customerss);
+    }
+
+    public function jsondelete($id)
+    {
+        $customer = Customer::find($id);
+        $customer->delete();
+        return response()->json($customer);
+
     }
 }

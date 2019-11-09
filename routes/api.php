@@ -26,3 +26,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //  return $person;
 // });
+
+
+Route::get('/customer','CustomerController@jsondata');
+Route::post('/customer','CustomerController@jsoncreate');
+Route::get('/customer/{id}','CustomerController@jsondatawidthid');
+Route::put('/customer/update/{id}','CustomerController@jsonupdate');
+Route::delete('/customer/delete/{id}','CustomerController@jsondelete');
